@@ -1,1 +1,24 @@
-<p>verification-code works!</p>
+
+<div class="row verification-page">
+    <div class="col-sm-12 col-md-6 middle">        
+        <div class="verification-card">
+            <button class="close-button" (click)="close()">&times;</button>
+            <img src="assets/postcard.svg" alt="Verification Photo" class="verification-photo">
+            <h2 class="verification-title">Verification Code</h2>
+            <p class="verification-instruction">Please enter the verification code sent to your phone number ** 34</p>
+            <div class="verification-inputs">
+                <input type="text" maxlength="1" class="verification-input" 
+                            (input)="moveToNext($event)" [(ngModel)]="code[0]" [ngClass]="{'filled': code[0]}">
+                <input type="text" maxlength="1" class="verification-input" 
+                            (input)="moveToNext($event)" [(ngModel)]="code[1]" [ngClass]="{'filled': code[1]}">
+                <input type="text" maxlength="1" class="verification-input" 
+                            (input)="moveToNext($event)" [(ngModel)]="code[2]" [ngClass]="{'filled': code[2]}">
+                <input type="text" maxlength="1" class="verification-input" 
+                            (input)="moveToNext($event)" [(ngModel)]="code[3]" [ngClass]="{'filled': code[3]}">
+            </div>
+            <p class="resend-instruction">The code will be sent again within <span>{{counter}}</span> seconds</p>
+            <button class="verify-button">Verify</button>
+        </div>
+    </div>
+</div>
+  
