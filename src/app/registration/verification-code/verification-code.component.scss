@@ -1,0 +1,101 @@
+.verification-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .middle {
+        display: flex;
+        justify-content: center;
+        
+        .verification-card {
+            position: relative;
+            max-width: 464px;
+            height: fit-content;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            
+            .close-button {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                background: none;
+                border: none;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            
+            .verification-photo {
+              width: 120px;
+              height: 120px;
+              margin: 63px auto 32px;
+            }
+        
+            .verification-title {
+              font-size: 24px;
+              font-weight: 600;
+              color: rgba(69, 76, 102, 1);
+              text-transform: capitalize;
+              margin-bottom: 16px;
+            }
+            
+            .verification-instruction {
+              font-size: 16px;
+              color: rgba(116, 122, 136, 1);
+              width: 408px;
+              margin: 0 auto 48px;
+            }
+            
+            .verification-inputs {
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+                margin-bottom: 30px;
+            }
+
+            .verification-input {
+                width: 88px;
+                height: 48px;
+                background: rgba(255, 255, 255, 1);
+                border: 1px solid #D0D5DE;
+                border-radius: 4px;
+                font-size: 18px;
+                text-align: center;
+                color: #454C66;
+                outline: none;
+                
+                &.filled {
+                    border: 1px solid rgba(165, 155, 224, 1);                    
+                }
+              }
+              
+              .resend-instruction {
+                font-size: 16px;
+                color: rgba(116, 122, 136, 1);
+
+                span {
+                    color: #6AC7BB;
+                    font-weight: bold;
+                }
+              }
+              
+              .verify-button {
+                width: 176px;
+                height: 48px;
+                margin: 40px auto;
+                background: rgba(99, 92, 168, 1);
+                border: none;
+                border-radius: 4px;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+              }
+        }
+    }
+}
+
+  
