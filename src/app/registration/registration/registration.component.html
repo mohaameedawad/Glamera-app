@@ -1,1 +1,134 @@
-<p>registration works!</p>
+<div class=" parent">
+    <div class="row full-height m-0">
+      <div class="image-column">
+        <img src="assets/pretty-hijab.jpg" class="img-fluid" alt="Makeup Model">
+        <div class="image-overlay"></div> 
+        <div class="second-overlay">
+            <div class="paragraph">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry
+            </div> 
+            <div class="name">
+                Salma Mohamed
+            </div>
+            <div class="profession">
+                Founder, Soliter Salon
+            </div>
+        </div>
+        <div class="third-shape"></div> 
+        <div class="fourth-shape"></div> 
+        <img src="assets/Group 52.svg" class="svgLogo" alt="Makeup Model">
+    </div>    
+    <div class="form-column">
+        <div class="help-link">
+            <span class="having-troubles">Having troubles?</span>
+            <a href="#" class="get-help">Get Help</a>
+        </div>
+        
+        <header class="title">
+            <div class="header">Start your business now</div>
+            <div class="description">
+                Creating your company is just a few steps away, Enter your email address to continue.
+            </div>
+        </header>
+
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-5 col-lg-5 ">
+                <label for="firstName" class="my-2">First Name</label>
+                <input id="firstName" formControlName="firstName" placeholder="Enter your first name" 
+                        type="text" class="form-control" [class.error]="hasError('firstName', 'required')">
+                            
+            <div *ngIf="hasError('firstName', 'required')" class="invalid-feedback">
+                    First Name is required.
+                  </div>
+            </div>
+            <div class="form-group col-sm-12 col-md-5 col-lg-5 ">
+                <label for="lastName" class="my-2">Last Name</label>
+                <input id="lastName" formControlName="lastName" placeholder="Enter your last name" 
+                       type="text" class="form-control" [class.error]="hasError('lastName', 'required')">
+
+                <div *ngIf="hasError('lastName', 'required')" class="invalid-feedback">
+                    Last Name is required.
+                  </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-5 col-lg-5 ">
+                <label for="email" class="my-2">Email Address</label>
+                <input id="email" formControlName="email" placeholder="Enter your email" 
+                       type="email" class="form-control" 
+                       [class.error]="hasError('email', 'email') || hasError('email', 'required')">
+
+                <div *ngIf="hasError('email', 'required') || hasError('email', 'email')" class="invalid-feedback">
+                  <div *ngIf="hasError('email', 'required')">Email is required.</div>
+                  <div *ngIf="hasError('email', 'email')">Invalid email format.</div>
+                </div>
+            </div>
+
+            
+            <div class="form-group col-sm-12 col-md-5 col-lg-5 ">
+                <label for="phone" class="my-2">Phone Number</label>
+              
+                <div class="main">
+
+                <div class="dropdown">
+                    <div class="international-phone dropdown-toggle" id="dropdownMenuButton" 
+                          data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 12px;">
+                      <img [src]="selectedCountry.flag" width="18px" alt="Flag" style="border: 1px solid #ddd; margin-right: 8px;">
+                      {{ selectedCountry.code }}
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li *ngFor="let country of countries">
+                        <a class="dropdown-item" (click)="selectCountry(country)">
+                          <img [src]="country.flag" width="18px" alt="Flag" style="border: 1px solid #ddd; margin-right: 8px;">
+                          {{ country.code }}
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                
+                <input id="phone" formControlName="phone" placeholder="Enter your phone" 
+                type="tel" class="form-control" style="width:202px !important;"  [class.error]="hasError('phone', 'required')">
+            </div>
+
+                <div *ngIf="hasError('phone', 'required')" class="invalid-feedback">
+                    Phone number is required.
+                  </div>
+            </div>
+        </div>
+
+    <div class="form-group col-sm-12 col-md-5 col-lg-5 ">
+        <label for="password" class="my-2">Password</label>
+        <input id="password" formControlName="password" placeholder="Enter your password" 
+               type="password" class="form-control" [class.error]="hasError('password', 'required')">
+
+        <div *ngIf="hasError('password', 'required')" class="invalid-feedback">
+            Password is required.
+          </div>
+    </div>
+        <footer>
+            <div class="checkbox-container">
+                <input type="checkbox" id="privacy-checkbox" formControlName="agreeToTerms">
+                <label for="privacy-checkbox">
+                  <span class="text-before">Agree to the </span>
+                  <span class="highlighted-text">Privacy Policy</span>
+                  <span class="text-between"> and </span>
+                  <span class="highlighted-text">Terms & Conditions</span>
+                </label>
+              </div>  
+              
+              <button type="submit" class="btn btn-primary">
+                Next
+                <i class="pi pi-arrow-right"></i>
+              </button>
+            </footer>
+            <div *ngIf="hasError('agreeToTerms', 'required')" class="invalid-feedback">
+              You must agree to the terms and conditions.
+          </div>
+    </form>
+
+      </div>
+    </div>
+  </div>
+  

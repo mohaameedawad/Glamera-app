@@ -6,13 +6,17 @@ import { VerificationCodeComponent } from './verification-code/verification-code
 import { CreatedSuccessfullyComponent } from './created-successfully/created-successfully.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'register', pathMatch: 'full' },
+
   { path: 'register', component: RegistrationComponent },
 
   { path: 'business-info', component: BusinessInformationComponent },
 
   { path: 'verify-code', component: VerificationCodeComponent },
 
-  { path: 'created-success', component: CreatedSuccessfullyComponent }
+  { path: 'created-success', component: CreatedSuccessfullyComponent },
+
+  {path: '**' , redirectTo: 'register'}
 ];
 
 @NgModule({
