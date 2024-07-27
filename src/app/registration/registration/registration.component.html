@@ -1,24 +1,6 @@
 <div class=" parent">
     <!-- image column -->
     <div class="row full-height">
-      <!-- <div class="image-column">
-        <img src="assets/pretty-hijab.jpg" class="img-fluid" alt="Makeup Model">
-        <div class="image-overlay"></div> 
-        <div class="second-overlay">
-            <div class="paragraph">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry
-            </div> 
-            <div class="name">
-                Salma Mohamed
-            </div>
-            <div class="profession">
-                Founder, Soliter Salon
-            </div>
-            <img src="assets/Group 52.svg" class="svgLogo" alt="Makeup Model">
-        </div>
-        <div class="third-shape"></div> 
-        <div class="fourth-shape"></div> 
-    </div>     -->
     <div class="image-column">
         <img src="assets/pretty-hijab.jpg" class="img-fluid" alt="Makeup Model">
         <div class="image-overlay"></div>
@@ -123,6 +105,9 @@
                             <div *ngIf="hasError('phone', 'required')" class="invalid-feedback">
                                 Phone number is required.
                               </div>
+                            <div *ngIf="hasError('phone', 'pattern')" class="invalid-feedback">
+                                Phone number must be numbers only.
+                              </div>
                         </div>
                     </div>
             
@@ -146,7 +131,7 @@
                             </label>
                           </div>  
                           
-                          <button type="submit" class="btn btn-primary">
+                          <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">
                             Next
                             <i class="pi pi-arrow-right"></i>
                           </button>
