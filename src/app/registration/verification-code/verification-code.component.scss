@@ -67,7 +67,7 @@
                 text-align: center;
                 color: #454C66;
                 outline: none;
-                
+
                 &.filled {
                     border: 1px solid rgba(165, 155, 224, 1);                    
                 }
@@ -98,4 +98,14 @@
     }
 }
 
-  
+@media screen and (max-width: 480px) {
+    .verification-card {
+        max-width: 100% !important;
+    }
+    .verification-instruction{
+        width: 100% !important;
+    }
+    .verification-input {
+        width: calc(100% / 4) !important;
+    }
+}

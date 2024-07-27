@@ -37,4 +37,8 @@ export class VerificationCodeComponent implements OnInit {
   close() {
     this.router.navigate(['/registration/business-info']);
   }
+  
+  verify() {
+    this.router.navigate(['/registration/created-success']);
+  }
 }
