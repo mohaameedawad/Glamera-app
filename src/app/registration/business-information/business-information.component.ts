@@ -93,8 +93,9 @@ throw new Error('Method not implemented.');
     if (this.BusinessForm.valid) {
       // Handle form submission
     }
-
     this.router.navigate(['/registration/verify-code']);
-
+  }
+  back() {
+    this.router.navigate(['/registration/register']);
   }
 }

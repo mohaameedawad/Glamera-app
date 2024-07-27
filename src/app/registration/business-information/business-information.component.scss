@@ -1,6 +1,7 @@
 .parent-bussiness {
     display: flex;
-    height: 100vh;
+    height: 101vh;
+    background-color: #F5F6F9;
 
     .image-column {
         width: 34.33%;
@@ -83,12 +84,10 @@
                 color: rgba(69, 76, 102, 1);
         }  
         .form-control {
-                top: 334px;
-                left: 552px;
                 font-size: 14px;
                 height: 48px;
                 color: rgba(69, 76, 102, 1);
-                background: #FFFFFF 0% 0% no-repeat padding-box;
+                background: #FFFFFF;
         }
             
         .form-control:focus {
@@ -180,7 +179,25 @@
 }
 
 @media screen and (max-width: 992px) and (min-width: 768px) {
-    .business-type {
-        width: calc(100%/2 - 8px);
+    .form-column {
+        width: 100%;
+        .business-type {
+            width: calc(100%/2 - 8px);
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .parent-bussiness {
+        background-color: #F5F6F9;  
+        height: 100%; 
+        .image-column {
+            display: none;
+        }
+        .form-column {
+            width: 90%;
+            margin: 0 auto 20px;
+            background: #F5F6F9;
+        }
     }
 }
