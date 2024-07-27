@@ -90,10 +90,10 @@ throw new Error('Method not implemented.');
   }
 
   onSubmit(): void {
+    console.log(this.BusinessForm.value)
     if (this.BusinessForm.valid) {
-      // Handle form submission
+      this.router.navigate(['/registration/verify-code']);
     }
-    this.router.navigate(['/registration/verify-code']);
   }
   back() {
     this.router.navigate(['/registration/register']);

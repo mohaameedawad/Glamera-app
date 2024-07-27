@@ -22,10 +22,9 @@ export class RegistrationComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]*$')]], // Accepts only numbers
       password: ['', Validators.required],
       agreeToTerms: [false, Validators.requiredTrue],
-      countryId: [this.selectedCountry.code, Validators.required],
 
     });
   }
@@ -40,12 +39,14 @@ export class RegistrationComponent implements OnInit {
 
   selectCountry(country: any) {
     this.selectedCountry = country;
-    this.registrationForm.patchValue({ countryId: country.code });
   }
 
   onSubmit(): void {
-    // if (this.registrationForm.valid) {
+    if (this.registrationForm.valid) {
+      let formValue = {...this.registrationForm.value};
+      formValue.phone = this.selectedCountry.code + formValue.phone;
+      console.log(formValue);
       this.router.navigate(['/registration/business-info']);
-    // }
+    }
   }
 }

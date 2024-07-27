@@ -34,6 +34,10 @@ export class VerificationCodeComponent implements OnInit {
     }
   }
 
+  isButtonDisabled(): boolean {
+    return this.code.find(input => input === '') !== undefined;
+  }
+
   close() {
     this.router.navigate(['/registration/business-info']);
   }
