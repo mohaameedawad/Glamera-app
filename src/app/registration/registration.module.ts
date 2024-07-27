@@ -8,6 +8,7 @@ import { VerificationCodeComponent } from './verification-code/verification-code
 import { CreatedSuccessfullyComponent } from './created-successfully/created-successfully.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrimengModule } from '../primeng/primeng.module';
+import { LottieComponent } from 'ngx-lottie';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { PrimengModule } from '../primeng/primeng.module';
     FormsModule,
     ReactiveFormsModule,
     RegistrationRoutingModule,
-    PrimengModule
+    PrimengModule,
+    LottieComponent
   ]
 })
 export class RegistrationModule { }
